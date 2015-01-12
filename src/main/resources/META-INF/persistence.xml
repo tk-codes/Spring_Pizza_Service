@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	version="1.0">
+
+	<persistence-unit name="spring-tut" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+
+
+		<!-- value='create' to build a new database on each run; value='update' 
+			to modify an existing database; value='create-drop' means the same as 'create' 
+			but also drops tables when Hibernate closes; value='validate' makes no changes 
+			to the database -->
+
+
+		<properties>
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql">true</property>
+		</properties>
+	</persistence-unit>
+</persistence>
