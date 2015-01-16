@@ -1,5 +1,6 @@
 package com.tut.spring.entities;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.jgroups.protocols.DELAY;
 
 @Entity
 @Table(name="pizza_order")
@@ -16,8 +19,8 @@ public class PizzaOrder {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	
-	@ManyToOne
-	@JoinColumn(name="pizza_fk")
+	@ManyToOne(cascade={CascadeType.MERGE})
+	@JoinColumn(name="pizza_fk", nullable=true)
 	private Pizza pizza;
 	
 	@ManyToOne

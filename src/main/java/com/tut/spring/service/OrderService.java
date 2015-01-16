@@ -6,7 +6,10 @@ import com.tut.spring.dto.OrderDTO;
 
 public interface OrderService {
 	
-	public Integer createOrder(OrderDTO order);
+	public OrderDTO create(OrderDTO order);
+	public OrderDTO update(OrderDTO order);
+	public void delete(Integer id);
+	public void deleteAll();
 	public List<OrderDTO> findAllOrders();
-	public OrderDTO findOrder(int id);
+	public OrderDTO findOne(int id);
 }

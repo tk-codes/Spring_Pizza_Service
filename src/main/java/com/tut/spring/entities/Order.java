@@ -2,6 +2,7 @@ package com.tut.spring.entities;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,11 +19,11 @@ public class Order {
 	@GeneratedValue
 	private Integer id;
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="customer_fk")
 	private Customer customer;
 	
-	@OneToMany(mappedBy="order")
+	@OneToMany(mappedBy="order", cascade={CascadeType.ALL}, orphanRemoval=true)
 	private List<PizzaOrder> pizzas;
 
 	public Integer getId() {
@@ -48,5 +49,4 @@ public class Order {
 	public void setPizzas(List<PizzaOrder> pizzas) {
 		this.pizzas = pizzas;
 	}
-
 }

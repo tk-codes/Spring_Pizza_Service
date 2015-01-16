@@ -1,5 +1,6 @@
 package com.tut.spring.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerDTO {
@@ -57,13 +58,12 @@ public class CustomerDTO {
 	}
 
 	public List<OrderDTO> getOrders() {
+		if(orders==null)
+			orders = new ArrayList<OrderDTO>();
 		return orders;
 	}
 
 	public void setOrders(List<OrderDTO> orders) {
 		this.orders = orders;
 	}
-	
-	
-
 }

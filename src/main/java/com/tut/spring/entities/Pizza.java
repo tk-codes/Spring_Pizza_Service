@@ -20,6 +20,8 @@ public class Pizza {
 	
 	private String incredients;
 	
+	private double price;
+	
 	public Pizza(){
 		
 	}
@@ -46,6 +48,14 @@ public class Pizza {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
 	
 	
