@@ -6,6 +6,8 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -27,6 +29,7 @@ import com.tut.client.controller.Colors;
 import com.tut.client.controller.GUIconstants;
 import com.tut.client.controller.NewOrderController;
 import com.tut.spring.dto.PizzaDTO;
+import com.tut.spring.dto.PizzaOrderDTO;
 
 public class ItemListView extends JPanel {
 	
@@ -109,7 +112,14 @@ public class ItemListView extends JPanel {
 			JLabel price = new JLabel("CHF "+ currencyFormatter.format(pizza.getPrice()));
 			price.setFont(new Font("Calibri", Font.ITALIC, 15));
 			price.setForeground(Color.red);
-			JButton add = new JButton("add");			
+			JButton add = new JButton("add");
+			add.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					controller.addPizzaOrder(getPizza());
+				}
+			});
 			
 			verBox.add(titleDeskNote);
 			verBox.add(name);

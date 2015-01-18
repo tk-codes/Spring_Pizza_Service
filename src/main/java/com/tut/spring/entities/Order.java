@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -23,7 +24,7 @@ public class Order {
 	@JoinColumn(name="customer_fk")
 	private Customer customer;
 	
-	@OneToMany(mappedBy="order", cascade={CascadeType.ALL}, orphanRemoval=true)
+	@OneToMany(/*mappedBy="order", */cascade={CascadeType.ALL}, orphanRemoval=true, fetch=FetchType.EAGER)
 	private List<PizzaOrder> pizzas;
 
 	public Integer getId() {

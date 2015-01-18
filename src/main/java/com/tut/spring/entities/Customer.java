@@ -3,6 +3,7 @@ package com.tut.spring.entities;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -24,8 +25,8 @@ public class Customer {
 	
 	private String place;
 	
-	@OneToMany(mappedBy="customer")
-	private List<Order> orders;
+//	@OneToMany(mappedBy="customer")
+//	private List<Order> orders;
 
 	public Integer getId() {
 		return id;
@@ -67,13 +68,13 @@ public class Customer {
 		this.place = place;
 	}
 
-	public List<Order> getOrders() {
-		return orders;
-	}
-
-	public void setOrders(List<Order> orders) {
-		this.orders = orders;
-	}
+//	public List<Order> getOrders() {
+//		return orders;
+//	}
+//
+//	public void setOrders(List<Order> orders) {
+//		this.orders = orders;
+//	}
 	
 	
 

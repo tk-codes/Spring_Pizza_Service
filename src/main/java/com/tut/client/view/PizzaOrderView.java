@@ -2,7 +2,6 @@ package com.tut.client.view;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.util.List;
 
 import javax.swing.Box;
 import javax.swing.JPanel;
@@ -51,4 +50,12 @@ public class PizzaOrderView extends JPanel {
 	private PizzaListView pizzaListView;
 	
 	private NewOrderController controller;
+	
+	public void addPizzaOrder(PizzaDTO pizzaOrder) {
+		this.orderView.addPizzaOrder(pizzaOrder);	
+	}
+	
+	public void clearOrder(){
+		orderView.reset();
+	}
 }

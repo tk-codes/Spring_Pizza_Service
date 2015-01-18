@@ -1,14 +1,25 @@
 package com.tut.spring.dto;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderDTO {
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.NONE, getterVisibility = JsonAutoDetect.Visibility.NONE) 
+public class OrderDTO implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	@JsonProperty
 	private Integer id;
-	
+	@JsonProperty
 	private CustomerDTO customer;
-	
+	@JsonProperty
 	private List<PizzaOrderDTO> pizzas;
 
 	public Integer getId() {
@@ -39,12 +50,9 @@ public class OrderDTO {
 	
 	public void addPizza(PizzaOrderDTO pizza){
 		getPizzas().add(pizza);
-		pizza.setOrder(this);
 	}
 	
 	public void removePizza(PizzaOrderDTO pizza){
 		getPizzas().remove(pizza);
-		pizza.setOrder(null);
 	}
-
 }

@@ -1,10 +1,19 @@
 package com.tut.spring.dto;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomerDTO {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class CustomerDTO implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private Integer id;
 	
 	private String name;
@@ -15,7 +24,7 @@ public class CustomerDTO {
 	
 	private String place;
 	
-	private List<OrderDTO> orders;
+//	private List<OrderDTO> orders;
 
 	public Integer getId() {
 		return id;
@@ -57,13 +66,13 @@ public class CustomerDTO {
 		this.place = place;
 	}
 
-	public List<OrderDTO> getOrders() {
-		if(orders==null)
-			orders = new ArrayList<OrderDTO>();
-		return orders;
-	}
-
-	public void setOrders(List<OrderDTO> orders) {
-		this.orders = orders;
-	}
+//	public List<OrderDTO> getOrders() {
+//		if(orders==null)
+//			orders = new ArrayList<OrderDTO>();
+//		return orders;
+//	}
+//
+//	public void setOrders(List<OrderDTO> orders) {
+//		this.orders = orders;
+//	}
 }

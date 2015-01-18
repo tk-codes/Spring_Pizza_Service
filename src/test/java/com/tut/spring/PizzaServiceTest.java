@@ -25,7 +25,7 @@ public class PizzaServiceTest {
 	PizzaRepository repository;
 	
 	@Autowired
-	PizzaService pizzaService;
+	private PizzaService pizzaService;
 	
 	@Before
 	public void beforeTest(){

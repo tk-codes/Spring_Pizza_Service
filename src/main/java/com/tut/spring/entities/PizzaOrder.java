@@ -23,9 +23,9 @@ public class PizzaOrder {
 	@JoinColumn(name="pizza_fk", nullable=true)
 	private Pizza pizza;
 	
-	@ManyToOne
-	@JoinColumn(name="order_fk")
-	private Order order;
+//	@ManyToOne
+//	@JoinColumn(name="order_fk")
+//	private Order order;
 	
 	private int count;
 	
@@ -53,13 +53,13 @@ public class PizzaOrder {
 		this.pizza = pizza;
 	}
 
-	public Order getOrder() {
-		return order;
-	}
-
-	public void setOrder(Order order) {
-		this.order = order;
-	}
+//	public Order getOrder() {
+//		return order;
+//	}
+//
+//	public void setOrder(Order order) {
+//		this.order = order;
+//	}
 
 	public void setId(Integer id) {
 		this.id = id;

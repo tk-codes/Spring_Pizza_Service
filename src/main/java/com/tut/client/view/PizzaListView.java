@@ -51,7 +51,7 @@ public class PizzaListView extends JPanel {
 		button1.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-//				noteListController.createNote();
+				//controller.addPizzaOrder();
 			}
 		});
 		horizontalBox.add(button1);

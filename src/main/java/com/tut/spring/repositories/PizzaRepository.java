@@ -11,4 +11,5 @@ public interface PizzaRepository extends JpaRepository<Pizza, Integer> {
 	Pizza findByName(String name);
 	
 	List<Pizza> findByNameContainingIgnoreCase(String name);
+	
 }
