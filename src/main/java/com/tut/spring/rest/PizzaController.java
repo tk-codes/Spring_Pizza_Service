@@ -1,6 +1,5 @@
 package com.tut.spring.rest;
 
-import java.awt.PageAttributes.MediaType;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +18,9 @@ import com.tut.spring.service.PizzaService;
 public class PizzaController {
 
 	@Autowired
-	PizzaService pizzaService;
+	private PizzaService pizzaService;
 
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	@ResponseStatus(HttpStatus.OK)
+	@RequestMapping(value = "/", method = RequestMethod.GET, produces="application/json")
 	@ResponseBody
 	public List<PizzaDTO> getAll() {
 		try {
@@ -32,8 +30,20 @@ public class PizzaController {
 		}
 	}
 	
+	@RequestMapping(value="/get/")
+	public PizzaDTO findOne(){
+		return pizzaService.findOne(6);
+	}
+	
 	@RequestMapping(value = "/test")
 	public String test(){
 		return "test1";
+	}
+	
+	@RequestMapping(value = "/test2")
+	public PizzaDTO test2(){
+		PizzaDTO p = new PizzaDTO();
+		p.setName("test");
+		return p;
 	}
 }

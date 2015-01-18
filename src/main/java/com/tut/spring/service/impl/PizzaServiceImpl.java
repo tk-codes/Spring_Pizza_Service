@@ -3,6 +3,8 @@ package com.tut.spring.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,10 +16,9 @@ import com.tut.spring.repositories.PizzaRepository;
 import com.tut.spring.service.PizzaService;
 
 @Component
-@Transactional
 public class PizzaServiceImpl implements PizzaService {
 
-	@Autowired
+	@Resource
 	private PizzaRepository repository;
 
 	@Autowired

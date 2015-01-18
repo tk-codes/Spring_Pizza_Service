@@ -1,7 +1,9 @@
 package com.tut.spring.dto;
 
+import java.io.Serializable;
 
-public class PizzaDTO {
+
+public class PizzaDTO implements Serializable {
 
 	private Integer id;
 	private String name;
