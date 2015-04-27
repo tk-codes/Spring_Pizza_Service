@@ -1,4 +1,6 @@
 #Pizza REST web service with Spring
 
 This project uses the following Spring Technologies 
-![Project Overview](https://github.com/tk-codes/Spring_Pizza_Service/blob/master/overview.PNG)
+- Spring Data JPA
+- Spring MVC REST
+- Spring Template
